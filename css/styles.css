@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* reseta margens, espaçamentos e define o box-sizing para incluir bordas e preenchimento no cálculo do tamanho */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* estilo geral do corpo da página: define a fonte principal, cores de fundo e texto, altura de linha e tamanho da fonte */
+body {
+  font-family: "Open Sans", sans-serif;
+  background: hsl(210, 36%, 96%);
+  color: hsl(209, 61%, 16%);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+/* remove os marcadores padrão de listas */
+ul {
+  list-style-type: none;
+}
+
+/* remove o sublinhado padrão de links */
+a {
+  text-decoration: none;
+}
+
+/* define largura total para imagens, exceto aquelas com a classe .logo */
+img:not(.logo) {
+  width: 100%;
+}
+
+/* define imagens como elementos de bloco */
+img {
+  display: block;
+}
+
+/* estilos gerais para cabeçalhos: espaçamento entre letras, transformação para capitalizar, altura de linha e margens */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.25rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* tamanhos de fonte para diferentes níveis de cabeçalhos */
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+
+/* estilo para parágrafos: margem inferior e cor */
+p {
+  margin-bottom: 1.25rem;
+  color: hsl(210, 22%, 49%);
+}
+
+/* estilos para telas maiores que 800px */
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* estilo para botões gerais */
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: #222;
+  padding: 0.375rem 0.75rem;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  transition: all 0.3s linear;
+  font-size: 0.875rem;
+  border: 2px solid #222;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+/* mudança de cor ao passar o mouse no botão */
+.btn:hover {
+  color: #fff;
+  background: #222;
+}
+
+/* define espaçamento para seções */
+.section {
+  padding: 5rem 0;
+}
+
+/* centraliza o conteúdo principal */
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* estilo para a seção do menu */
+.menu {
+  padding: 5rem 0;
+}
+
+/* centraliza e adiciona espaçamento ao título */
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* define estilo da linha decorativa */
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  background: #c59d5f;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* centraliza os botões e adiciona espaçamento */
+.btn-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* estilo para os botões de filtro */
+.filter-btn {
+  background: transparent;
+  border-color: #c59d5f;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  color: #c59d5f;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+/* mudança de cor ao passar o mouse nos botões de filtro */
+.filter-btn:hover {
+  background: #c59d5f;
+  color: #fff;
+}
+
+/* define o layout da seção principal de itens */
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  gap: 3rem 2rem;
+  justify-items: center;
+}
+
+/* define o layout e limita largura para itens do menu */
+.menu-item {
+  display: grid;
+  gap: 1rem 2rem;
+  max-width: 25rem;
+}
+
+/* estilo para imagens dos itens do menu */
+.photo {
+  object-fit: cover;
+  height: 200px;
+  border: 0.25rem solid #c59d5f;
+  border-radius: 0.5rem;
+}
+
+/* define layout para o cabeçalho das informações do item */
+.item-info header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px dotted hsl(210, 22%, 49%);
+}
+
+/* estilo para o título do item */
+.item-info h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* define cor para o preço */
+.price {
+  color: #c59d5f;
+}
+
+/* remove margem inferior e adiciona espaçamento superior para o texto */
+.item-text {
+  margin-bottom: 0;
+  padding-top: 1rem;
+}
+
+/* ajustes para telas maiores que 768px */
+@media screen and (min-width: 768px) {
+  .menu-item {
+    grid-template-columns: 225px 1fr;
+    gap: 0 1.25rem;
+    max-width: 40rem;
+  }
+  .photo {
+    height: 175px;
+  }
+}
+
+/* ajustes para telas maiores que 1200px */
+@media screen and (min-width: 1200px) {
+  .section-center {
+    width: 95vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo {
+    height: 150px;
+  }
+}
