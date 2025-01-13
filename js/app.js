@@ -1,5 +1,3 @@
-// define um array de itens do menu com propriedades como id, título, categoria, preço, fonte da imagem
-// e descrição
 const menu = [
   {
     id: 1,
@@ -83,21 +81,15 @@ const menu = [
   },
 ];
 
-// seleciona o elemento html onde os itens do menu serão exibidos
 const sectionCenter = document.querySelector(".section-center");
-
-// seleciona o elemento html onde os botões de filtro serão exibidos
 const container = document.querySelector(".btn-container");
 
-// adiciona um evento para executar quando a página for carregada
 window.addEventListener("DOMContentLoaded", function () {
-  displayMenuItems(menu); // exibe todos os itens do menu inicialmente
-  displayMenuButtons(); // exibe os botões de filtro
+  displayMenuItems(menu);
+  displayMenuButtons();
 });
 
-// função para exibir os itens do menu na página
 function displayMenuItems(menuItems) {
-  // mapeia os itens do menu para criar a estrutura html de cada item
   let displayMenu = menuItems.map(function (item) {
     return `<article class="menu-item">
               <img src=${item.img} class="photo" alt=${item.title} />
@@ -112,13 +104,11 @@ function displayMenuItems(menuItems) {
               </div>
             </article>`;
   });
-  displayMenu = displayMenu.join(""); // junta todos os itens em uma única string
-  sectionCenter.innerHTML = displayMenu; // insere os itens no elemento html
+  displayMenu = displayMenu.join("");
+  sectionCenter.innerHTML = displayMenu;
 }
 
-// função para exibir os botões de filtro com base nas categorias
 function displayMenuButtons() {
-  // reduz o array de itens do menu para obter uma lista única de categorias
   const categories = menu.reduce(
     function (values, item) {
       if (!values.includes(item.category)) {
@@ -126,28 +116,24 @@ function displayMenuButtons() {
       }
       return values;
     },
-    ["all"] // adiciona a categoria "all" como padrão
+    ["all"]
   );
-  // mapeia as categorias para criar os botões de filtro
   const categoryBtns = categories
     .map(function (category) {
       return `<button class="filter-btn" type="button" data-id="${category}">${category}</button>`;
     })
-    .join(""); // junta os botões em uma única string
-  container.innerHTML = categoryBtns; // insere os botões no elemento html
+    .join("");
+  container.innerHTML = categoryBtns;
 
-  // adiciona eventos de clique a cada botão de filtro
   const filterBtns = document.querySelectorAll(".filter-btn");
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
-      const category = e.currentTarget.dataset.id; // obtém a categoria clicada
-      // filtra os itens do menu pela categoria selecionada
+      const category = e.currentTarget.dataset.id;
       const menuCategory = menu.filter(function (menuItem) {
         if (menuItem.category === category) {
           return menuItem;
         }
       });
-      // exibe os itens filtrados ou todos os itens se a categoria for "all"
       if (category === "all") {
         displayMenuItems(menu);
       } else {

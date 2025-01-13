@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
-/* reseta margens, espaçamentos e define o box-sizing para incluir bordas e preenchimento no cálculo do tamanho */
 *,
 ::after,
 ::before {
@@ -9,7 +8,6 @@
   box-sizing: border-box;
 }
 
-/* estilo geral do corpo da página: define a fonte principal, cores de fundo e texto, altura de linha e tamanho da fonte */
 body {
   font-family: "Open Sans", sans-serif;
   background: hsl(210, 36%, 96%);
@@ -18,27 +16,22 @@ body {
   font-size: 0.875rem;
 }
 
-/* remove os marcadores padrão de listas */
 ul {
   list-style-type: none;
 }
 
-/* remove o sublinhado padrão de links */
 a {
   text-decoration: none;
 }
 
-/* define largura total para imagens, exceto aquelas com a classe .logo */
 img:not(.logo) {
   width: 100%;
 }
 
-/* define imagens como elementos de bloco */
 img {
   display: block;
 }
 
-/* estilos gerais para cabeçalhos: espaçamento entre letras, transformação para capitalizar, altura de linha e margens */
 h1,
 h2,
 h3,
@@ -50,7 +43,6 @@ h4 {
   font-family: "Roboto", sans-serif;
 }
 
-/* tamanhos de fonte para diferentes níveis de cabeçalhos */
 h1 {
   font-size: 3rem;
 }
@@ -64,13 +56,11 @@ h4 {
   font-size: 0.875rem;
 }
 
-/* estilo para parágrafos: margem inferior e cor */
 p {
   margin-bottom: 1.25rem;
   color: hsl(210, 22%, 49%);
 }
 
-/* estilos para telas maiores que 800px */
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -95,7 +85,6 @@ p {
   }
 }
 
-/* estilo para botões gerais */
 .btn {
   text-transform: uppercase;
   background: transparent;
@@ -111,36 +100,30 @@ p {
   border-radius: 0.5rem;
 }
 
-/* mudança de cor ao passar o mouse no botão */
 .btn:hover {
   color: #fff;
   background: #222;
 }
 
-/* define espaçamento para seções */
 .section {
   padding: 5rem 0;
 }
 
-/* centraliza o conteúdo principal */
 main {
   min-height: 100vh;
   display: grid;
   place-items: center;
 }
 
-/* estilo para a seção do menu */
 .menu {
   padding: 5rem 0;
 }
 
-/* centraliza e adiciona espaçamento ao título */
 .title {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* define estilo da linha decorativa */
 .underline {
   width: 5rem;
   height: 0.25rem;
@@ -149,14 +132,12 @@ main {
   margin-right: auto;
 }
 
-/* centraliza os botões e adiciona espaçamento */
 .btn-container {
   margin-bottom: 4rem;
   display: flex;
   justify-content: center;
 }
 
-/* estilo para os botões de filtro */
 .filter-btn {
   background: transparent;
   border-color: #c59d5f;
@@ -171,13 +152,11 @@ main {
   transition: all 0.3s linear;
 }
 
-/* mudança de cor ao passar o mouse nos botões de filtro */
 .filter-btn:hover {
   background: #c59d5f;
   color: #fff;
 }
 
-/* define o layout da seção principal de itens */
 .section-center {
   width: 90vw;
   margin: 0 auto;
@@ -187,14 +166,12 @@ main {
   justify-items: center;
 }
 
-/* define o layout e limita largura para itens do menu */
 .menu-item {
   display: grid;
   gap: 1rem 2rem;
   max-width: 25rem;
 }
 
-/* estilo para imagens dos itens do menu */
 .photo {
   object-fit: cover;
   height: 200px;
@@ -202,30 +179,25 @@ main {
   border-radius: 0.5rem;
 }
 
-/* define layout para o cabeçalho das informações do item */
 .item-info header {
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px dotted hsl(210, 22%, 49%);
 }
 
-/* estilo para o título do item */
 .item-info h4 {
   margin-bottom: 0.5rem;
 }
 
-/* define cor para o preço */
 .price {
   color: #c59d5f;
 }
 
-/* remove margem inferior e adiciona espaçamento superior para o texto */
 .item-text {
   margin-bottom: 0;
   padding-top: 1rem;
 }
 
-/* ajustes para telas maiores que 768px */
 @media screen and (min-width: 768px) {
   .menu-item {
     grid-template-columns: 225px 1fr;
@@ -237,7 +209,6 @@ main {
   }
 }
 
-/* ajustes para telas maiores que 1200px */
 @media screen and (min-width: 1200px) {
   .section-center {
     width: 95vw;
